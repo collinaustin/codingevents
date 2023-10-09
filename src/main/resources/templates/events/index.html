@@ -5,10 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-    <ol>
-        <th:block th:each = "event : ${events}">
-            <li th:text = "${events.name}"></li>
-        </th:block>
-    </ol>
+
+<h1>All Events</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${events} and ${events.size()}">No events!</p>
+
+<ul>
+    <th:block th:each="event : ${events}">
+        <li th:text="${event}"></li>
+    </th:block>
+</ul>
+
 </body>
 </html>
