@@ -46,7 +46,7 @@ public class EventController {
             @RequestParam String eventName,
             @RequestParam String eventDesc,
             @RequestParam String eventImg) {
-        events.put(eventName, Map.of(eventDesc, eventImg));
+        events.put(eventName, Map.of("description", eventDesc, "image", eventImg));
         return "redirect:/events";
     }
 
